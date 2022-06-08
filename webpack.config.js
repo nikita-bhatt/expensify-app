@@ -6,7 +6,7 @@ module.exports = (env) => {
   const CSSExtract = new ExtractTextPlugin('styles.css');
   console.log('env', env);
   return {
-    entry: './src/playground/redux-101.js',
+    entry: './src/playground/destructuring.js',
     output: {
      path: path.join(__dirname,'public'),
      filename: 'bundle.js'
