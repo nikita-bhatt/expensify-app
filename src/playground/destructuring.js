@@ -13,12 +13,16 @@
 // }
 // console.log(`${firstName} is ${age} year old.`);
 
-const Book = {
-    title: "Ego is enemy",
-    author: "Ryan",
-    publisher:{
-        //name: "Penguin"
-    }
-}
-const {name:publisherName="Self Published"} = Book.publisher;
-console.log(`${publisherName} is publisher`);
+// const Book = {
+//     title: "Ego is enemy",
+//     author: "Ryan",
+//     publisher:{
+//         //name: "Penguin"
+//     }
+// }
+// const {name:publisherName="Self Published"} = Book.publisher;
+// console.log(`${publisherName} is publisher`);
+
+const address = ['Bedok','South Ave','Singapore','2335'];
+const [,area,state,pin] = address;
+console.log(`${area} in ${state}`);
