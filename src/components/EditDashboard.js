@@ -1,8 +1,12 @@
 import React from 'react';
-const EditDashboardPage = () => (
-    <div>
-        This is Edit dashboard component
-    </div>
+const EditDashboardPage = (props) => {
+    console.log(props);
+    return (
+        <div>
+            This is Edit dashboard component for id {props.match.params.id}
+        </div>
+    
+    );
+};
 
-);
 export default EditDashboardPage;
