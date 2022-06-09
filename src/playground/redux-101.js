@@ -18,7 +18,9 @@ const setCount = ({count}) => ({
 const resetCount = () => ({
     type: 'RESET'
 });
-const store = createStore((state = {count: 0}, action) => {
+//Reducers- Are pure functions means o/p is decided by only input, doesn't change anything outside function scope 
+//and secondly reducers never change state or action, it just reads arguments
+const countReducer = (state = {count: 0}, action) => {
     switch(action.type) {
         case 'INCREEMENT':
             return {
@@ -40,8 +42,8 @@ const store = createStore((state = {count: 0}, action) => {
         default:
             return state;
     }   
-}
-);
+};
+const store = createStore(countReducer);
 store.subscribe(() => {
     console.log(store.getState());
 }
