@@ -3,11 +3,11 @@ import {shallow} from 'enzyme';
 import {AddDashboardPage} from '../../components/AddDashboard';
 import expenses from '../fixtures/expenses';
 
-let onSubmit, history, wrapper;
+let addExpense, history, wrapper;
 beforeEach(() => {
-    onSubmit = jest.fn(); //spy
+    addExpense = jest.fn(); //spy
     history = {push: jest.fn()};
-    wrapper = shallow(<AddDashboardPage onSubmit= {onSubmit} history= {history}/>);
+    wrapper = shallow(<AddDashboardPage addExpense= {addExpense} history= {history}/>);
 
 })
 
@@ -18,5 +18,5 @@ test('should render Add Expense dashboard page correctly', () => {
 test('should handle on Submit', () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1]);
     expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(onSubmit).toHaveBeenLastCalledWith(expenses[1]);
+    expect(addExpense).toHaveBeenLastCalledWith(expenses[1]);
 });
